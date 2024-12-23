@@ -54,6 +54,11 @@ android {
         def TEST_LOGIN_PASSWORD = System.getenv('TEST_LOGIN_PASSWORD')
         buildConfigField "String", "TEST_LOGIN_USERNAME", TEST_LOGIN_USERNAME != null ? "\"${TEST_LOGIN_USERNAME}\"" : '"Foo"'
         buildConfigField "String", "TEST_LOGIN_PASSWORD", TEST_LOGIN_PASSWORD != null ? "\"${TEST_LOGIN_PASSWORD}\"" : '"Bar"'
+
+        ndk {
+            // Filter for architectures supported by Flutter
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86_64"
+        }
     }
 
     testOptions {
