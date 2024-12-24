@@ -22,9 +22,10 @@ enum class NavTab constructor(
             return FeedFragment.newInstance()
         }
     },
-    READING_LISTS(R.string.nav_item_saved, R.id.nav_tab_reading_lists, R.drawable.selector_nav_saved) {
+        GAMES(R.string.nav_item_games, R.id.nav_tab_games, R.drawable.dpad)
+    {
         override fun newInstance(): Fragment {
-            return ReadingListsFragment.newInstance()
+            return Fragment()
         }
     },
     SEARCH(R.string.nav_item_search, R.id.nav_tab_search, R.drawable.selector_nav_search) {

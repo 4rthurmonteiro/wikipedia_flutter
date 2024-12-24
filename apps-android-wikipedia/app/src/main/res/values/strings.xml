@@ -15,6 +15,7 @@
     <string name="filter_hint_filter_my_lists_and_articles">Filter my lists</string>
     <string name="nav_item_suggested_edits">Edits</string>
     <string name="nav_item_more">More</string>
+    <string name="nav_item_games">Games</string>
     <string name="nav_item_search">Search</string>
     <string name="nav_item_contribute">Contribute</string>
     <string name="error_network_error">Cannot connect to the Internet.</string>
