@@ -28,6 +28,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import io.flutter.embedding.android.FlutterActivity
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.wikipedia.BackPressedHandler
@@ -150,8 +151,11 @@ class MainFragment : Fragment(), BackPressedHandler, MenuProvider, FeedFragment.
 
         binding.mainNavTabLayout.setOnItemSelectedListener { item ->
             if (item.order == NavTab.MORE.code()) {
-                ExclusiveBottomSheetPresenter.show(childFragmentManager, MenuNavTabDialog.newInstance())
-                return@setOnItemSelectedListener false
+                startActivity(
+                    FlutterActivity.createDefaultIntent(context!!)
+                )
+//                ExclusiveBottomSheetPresenter.show(childFragmentManager, MenuNavTabDialog.newInstance())
+//                return@setOnItemSelectedListener false
             }
             val fragment = currentFragment
             if (fragment is FeedFragment && item.order == 0) {
