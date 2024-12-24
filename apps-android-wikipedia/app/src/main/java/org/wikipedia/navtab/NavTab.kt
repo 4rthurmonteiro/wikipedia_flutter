@@ -5,6 +5,7 @@ import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import org.wikipedia.R
 import org.wikipedia.feed.FeedFragment
+import org.wikipedia.games.GamesFragment
 import org.wikipedia.history.HistoryFragment
 import org.wikipedia.model.EnumCode
 import org.wikipedia.readinglist.ReadingListsFragment
@@ -22,10 +23,10 @@ enum class NavTab constructor(
             return FeedFragment.newInstance()
         }
     },
-        GAMES(R.string.nav_item_games, R.id.nav_tab_games, R.drawable.dpad)
+    GAMES(R.string.nav_item_games, R.id.nav_tab_games, R.drawable.dpad)
     {
         override fun newInstance(): Fragment {
-            return Fragment()
+            return GamesFragment.makeFragment()
         }
     },
     SEARCH(R.string.nav_item_search, R.id.nav_tab_search, R.drawable.selector_nav_search) {

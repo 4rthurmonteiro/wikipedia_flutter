@@ -1,4 +1,11 @@
 package org.wikipedia.games
 
-class GamesFragment {
+import io.flutter.embedding.android.FlutterFragment
+
+class GamesFragment : FlutterFragment() {
+    companion object {
+        fun makeFragment() : GamesFragment {
+            return NewEngineFragmentBuilder(GamesFragment::class.java).build()
+        }
+    }
 }
